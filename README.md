@@ -57,7 +57,9 @@ Researchers 3-5 also receive the researcher password during initial setup. Passw
 5. Start both databases and run `npm run setup`.
 6. Run `npm run build`, then `npm start`; open APP_URL.
 
-`npm run dev` starts development mode. APP_URL must match the browser origin including its port. Use HTTPS, COOKIE_SECURE=true and authenticated least-privilege database accounts for deployment. Setup needs schema/routine/trigger creation privileges; use a separate restricted runtime account when deploying.
+For a viva, use `npm start` (or `scripts/start-local.ps1`) after building: it serves the prebuilt app without live compilation. `npm run dev` is for editing and needs more available memory. If Node reports a WebAssembly allocation/out-of-memory error, free memory by closing unused applications before retrying. The isolated MongoDB starter sets a 256 MB WiredTiger cache for the small fixture; the process still needs additional memory beyond that cache.
+
+APP_URL must match the browser origin including its port. Use HTTPS, COOKIE_SECURE=true and authenticated least-privilege database accounts for deployment. Setup needs schema/routine/trigger creation privileges; use a separate restricted runtime account when deploying.
 
 Setup creates exoplanet_db only if absent and does not drop an existing database. If it already exists, it must contain this project's schema. SQL scripts use that fixed database name. Setup is safe to repeat after a successful installation and does not reset user records or passwords. A failed partial installation requires inspection before retrying.
 
