@@ -1,0 +1,66 @@
+name: Verify project
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    # MongoDB 8.0 refuses Linux 6.19+ (SERVER-121912). The 22.04 runner
+    # currently uses kernel 6.8; revisit when MongoDB ships a compatible image.
+    runs-on: ubuntu-22.04
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: ci-database-password
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -pci-database-password"
+          --health-interval=10s --health-timeout=5s --health-retries=12
+      mongodb:
+        image: mongo:8.0
+        ports: ['27017:27017']
+        options: >-
+          --health-cmd="mongosh --quiet --eval 'db.adminCommand({ping:1})'"
+          --health-interval=10s --health-timeout=5s --health-retries=12
+    env:
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ci-database-password
+      MYSQL_DATABASE: exoplanet_db
+      MONGODB_URI: mongodb://127.0.0.1:27017
+      MONGODB_DATABASE: exoplanet_notes
+      SESSION_SECRET: disposable-ci-session-secret-at-least-32-characters
+      DEMO_ADMIN_PASSWORD: disposable-admin-password
+      DEMO_RESEARCHER_PASSWORD: disposable-researcher-password
+      APP_URL: http://127.0.0.1:3000
+      COOKIE_SECURE: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Configure disposable test environment
+        run: touch .env.local
+      - run: npm run setup
+      - run: npm run test:db
+      - run: npm run test:fresh
+      - run: npm run build
+      - name: Verify production API
+        shell: bash
+        run: |
+          npm start > /tmp/orbit-app.log 2>&1 &
+          APP_PID=$!
+          trap 'kill "$APP_PID" || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --silent --fail http://127.0.0.1:3000/api/session; then break; fi
+            sleep 1
+          done
+          npm run test:integration
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-evidence
+          path: docs/evidence/*results.json
