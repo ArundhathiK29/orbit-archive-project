@@ -1,0 +1,19 @@
+{
+  "executed_at": "2026-10-31T14:55:05.959Z",
+  "checks": [
+    "Administrator and Researcher sign-in verified in browser; sign-out returns to login.",
+    "Catalogue shows 6 planets, 5 missions, 3 candidates and 6 research notes.",
+    "Candidate action filters to 3 matching discoveries.",
+    "Review date before discovery rejected by SQL trigger and shown in dialog.",
+    "Valid review update displays confirmation.",
+    "MongoDB note search for promising returns the matching title.",
+    "Mission overview shows per-mission SQL counts and MongoDB tag aggregation.",
+    "Administrator audit screen displays automatic INSERT, UPDATE and DELETE history.",
+    "Researcher interface hides registration and audit controls.",
+    "Modal Escape closes the dialog and restores focus.",
+    "Invalid note tags preserve title, body and selected discovery.",
+    "Mobile viewport 390x844: document width 375px including scrollbar behaviour; no horizontal page overflow. Catalogue table scrolls within its panel.",
+    "Desktop layout verified at 1440x1000.",
+    "Initial dashboard rendering error was corrected and rechecked; no new console errors observed during final checks."
+  ]
+}
