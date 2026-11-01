@@ -1,5 +1,5 @@
 {
-  "executed_at": "2026-10-31T16:13:31.561Z",
+  "executed_at": "2026-11-01T07:46:40.885Z",
   "results": [
     {
       "name": "Unauthenticated catalogue rejected",
@@ -137,5 +137,6 @@
       "name": "Sign out expires session cookie",
       "result": "PASS"
     }
-  ]
+  ],
+  "cleanup_errors": []
 }
