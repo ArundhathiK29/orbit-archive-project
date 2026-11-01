@@ -1,0 +1,35 @@
+
+> exoplanet-observatory@1.0.0 build
+> next build
+
+▲ Next.js 16.4.3 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.mjs took 43ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 806ms
+  Running TypeScript ...
+  Finished TypeScript in 9ms ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/10) ...
+  Generating static pages using 11 workers (2/10) 
+  Generating static pages using 11 workers (4/10) 
+  Generating static pages using 11 workers (7/10) 
+✓ Generating static pages using 11 workers (10/10) in 2.7s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/audit
+├ ƒ /api/catalogue
+├ ƒ /api/discoveries
+├ ƒ /api/notes
+├ ƒ /api/session
+├ ƒ /api/stats
+└ ƒ /api/validations
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
