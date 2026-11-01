@@ -1,0 +1,24 @@
+{
+  "name": "exoplanet-observatory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "setup": "node --env-file=.env.local scripts/setup.mjs",
+    "test:integration": "node --env-file=.env.local scripts/integration.mjs",
+    "test:db": "node --env-file=.env.local scripts/verify-databases.mjs",
+    "test:fresh": "node --env-file=.env.local scripts/verify-fresh-install.mjs",
+    "docs:schema": "node --env-file=.env.local scripts/document-schema.mjs",
+    "docs:report": "python scripts/package-report.py"
+  },
+  "dependencies": {
+    "next": "^16.4.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "mysql2": "^3.15.0",
+    "mongodb": "^6.20.0"
+  }
+}
