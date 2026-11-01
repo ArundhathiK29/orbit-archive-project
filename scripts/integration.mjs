@@ -49,15 +49,22 @@ try {
   r = await request('session','DELETE',undefined,researcher); check('Sign out expires session cookie',r.status===200 && r.cookie==='orbit_session=');
 } catch (error) { console.error('Integration failure:',error.message); process.exitCode=1; }
 finally {
+  const cleanupErrors = [];
   if (newId) {
-    await (await notes()).deleteMany({discovery_id:newId});
-    const [rows]=await sql().execute('SELECT planet_id FROM discovery WHERE discovery_id=?',[newId]);
-    await sql().execute('DELETE FROM validation WHERE discovery_id=?',[newId]);
-    await sql().execute('DELETE FROM discovery WHERE discovery_id=?',[newId]);
-    if (rows[0]) await sql().execute('DELETE FROM planet WHERE planet_id=?',[rows[0].planet_id]);
+    // A stopped MongoDB service must not prevent SQL test-record cleanup or
+    // hide the original failing check. Retain a failure result for diagnosis.
+    try { await (await notes()).deleteMany({discovery_id:newId}); }
+    catch (error) { cleanupErrors.push(`MongoDB cleanup: ${error.message}`); }
+    try {
+      const [rows]=await sql().execute('SELECT planet_id FROM discovery WHERE discovery_id=?',[newId]);
+      await sql().execute('DELETE FROM validation WHERE discovery_id=?',[newId]);
+      await sql().execute('DELETE FROM discovery WHERE discovery_id=?',[newId]);
+      if (rows[0]) await sql().execute('DELETE FROM planet WHERE planet_id=?',[rows[0].planet_id]);
+    } catch (error) { cleanupErrors.push(`SQL cleanup: ${error.message}`); }
   }
+  if (cleanupErrors.length) { process.exitCode = 1; console.error(cleanupErrors.join('\n')); }
   await mkdir(new URL('../docs/evidence/',import.meta.url),{recursive:true});
-  await writeFile(new URL('../docs/evidence/integration-results.json',import.meta.url),JSON.stringify({executed_at:new Date().toISOString(),results},null,2));
+  await writeFile(new URL('../docs/evidence/integration-results.json',import.meta.url),JSON.stringify({executed_at:new Date().toISOString(),results,cleanup_errors:cleanupErrors},null,2));
   console.table(results); console.log(`${results.filter(r=>r.result==='PASS').length}/${results.length} integration checks passed.`);
   await closeDatabases();
 }
