@@ -1,0 +1,141 @@
+{
+  "executed_at": "2026-10-31T16:13:31.561Z",
+  "results": [
+    {
+      "name": "Unauthenticated catalogue rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Anonymous session is empty",
+      "result": "PASS"
+    },
+    {
+      "name": "Invalid password rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Cross-origin login rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Admin can sign in",
+      "result": "PASS"
+    },
+    {
+      "name": "Admin session resolves current database role",
+      "result": "PASS"
+    },
+    {
+      "name": "Researcher can sign in",
+      "result": "PASS"
+    },
+    {
+      "name": "Researcher cannot inspect audit",
+      "result": "PASS"
+    },
+    {
+      "name": "Researcher cannot register discovery",
+      "result": "PASS"
+    },
+    {
+      "name": "Catalogue returns seeded discoveries",
+      "result": "PASS"
+    },
+    {
+      "name": "Candidate filter uses host habitable zone",
+      "result": "PASS"
+    },
+    {
+      "name": "Mission filter returns matching source",
+      "result": "PASS"
+    },
+    {
+      "name": "Search handles SQL injection text as data",
+      "result": "PASS"
+    },
+    {
+      "name": "Invalid measurements rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Unobserved host rejected by SQL trigger",
+      "result": "PASS"
+    },
+    {
+      "name": "Rejected registration rolls back planet insert",
+      "result": "PASS"
+    },
+    {
+      "name": "Admin registers transactional discovery",
+      "result": "PASS"
+    },
+    {
+      "name": "Researcher creates review",
+      "result": "PASS"
+    },
+    {
+      "name": "Reviewer identity comes from session",
+      "result": "PASS"
+    },
+    {
+      "name": "Out-of-range confidence rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Review before discovery rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Researcher updates own review",
+      "result": "PASS"
+    },
+    {
+      "name": "Admin cannot withdraw another reviewer’s record",
+      "result": "PASS"
+    },
+    {
+      "name": "Researcher creates validated MongoDB note",
+      "result": "PASS"
+    },
+    {
+      "name": "Research note stores session author and nested metadata",
+      "result": "PASS"
+    },
+    {
+      "name": "MongoDB full-text note search works",
+      "result": "PASS"
+    },
+    {
+      "name": "Invalid note tags rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Cross-database discovery reference checked",
+      "result": "PASS"
+    },
+    {
+      "name": "Dashboard combines SQL and MongoDB aggregation",
+      "result": "PASS"
+    },
+    {
+      "name": "Researcher withdraws own review",
+      "result": "PASS"
+    },
+    {
+      "name": "Audit records INSERT, UPDATE and DELETE",
+      "result": "PASS"
+    },
+    {
+      "name": "Cross-origin mutation rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Tampered session rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Sign out expires session cookie",
+      "result": "PASS"
+    }
+  ]
+}
