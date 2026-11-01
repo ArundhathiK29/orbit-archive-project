@@ -23,7 +23,9 @@ if (!(Port-Open 13317)) {
 $mongoData = Join-Path $runtimeRoot 'mongo-data'
 if (!(Port-Open 27027)) {
   New-Item -ItemType Directory -Force -Path $mongoData | Out-Null
-  $arguments = @('--dbpath', ('"{0}"' -f $mongoData), '--port', '27027', '--bind_ip', '127.0.0.1', '--logpath', ('"{0}"' -f (Join-Path $runtimeRoot 'mongo.log')))
+  # The small teaching fixture does not need MongoDB's RAM-based default cache.
+  # Bound the cache on student laptops; this is not a total process-memory cap.
+  $arguments = @('--dbpath', ('"{0}"' -f $mongoData), '--port', '27027', '--bind_ip', '127.0.0.1', '--wiredTigerCacheSizeGB', '0.25', '--logappend', '--logpath', ('"{0}"' -f (Join-Path $runtimeRoot 'mongo.log')))
   $process = Start-Process -FilePath $mongoBinary -ArgumentList $arguments -WindowStyle Hidden -PassThru
   $process.Id | Set-Content -LiteralPath (Join-Path $runtimeRoot 'mongo.pid')
 }
