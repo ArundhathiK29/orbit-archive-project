@@ -6,7 +6,7 @@ Unified Cross-Mission Exoplanet Discovery - DBMS Level 3 project.
 
 Team: Arundhathi K (PES1UG24CS082) and Bhadra R S (PES1UG24CS111).
 
-Repository: https://github.com/ArundhathiK29/orbit-archive
+Repository: https://github.com/ArundhathiK29/orbit-archive-project
 
 ## What works
 
