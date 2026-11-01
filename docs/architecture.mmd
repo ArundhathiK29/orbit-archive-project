@@ -1,0 +1,10 @@
+flowchart TD
+    B[Browser: Admin / Researcher] --> UI[Next.js responsive workbench]
+    UI --> API[Next.js Route Handlers]
+    API --> AUTH[Signed session + current SQL role]
+    AUTH --> SQL[MySQL catalogue and reviews]
+    API --> SQL
+    API --> MONGO[MongoDB research notes]
+    SQL --> RULES[Keys / CHECKs / procedures / triggers]
+    RULES --> AUDIT[Validation audit history]
+    MONGO --> SEARCH[JSON schema / text index / tag aggregation]
