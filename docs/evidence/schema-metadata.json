@@ -1,0 +1,1219 @@
+{
+  "columns": [
+    {
+      "TABLE_NAME": "app_account",
+      "COLUMN_NAME": "researcher_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "app_account",
+      "COLUMN_NAME": "password_hash",
+      "COLUMN_TYPE": "varchar(256)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "app_account",
+      "COLUMN_NAME": "enabled",
+      "COLUMN_TYPE": "tinyint(1)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "1",
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "detection_method",
+      "COLUMN_NAME": "method_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "TABLE_NAME": "detection_method",
+      "COLUMN_NAME": "method_name",
+      "COLUMN_TYPE": "varchar(80)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "UNI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "detection_method",
+      "COLUMN_NAME": "description",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "discovery_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "planet_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "MUL",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "mission_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "MUL",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "method_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "MUL",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "reported_by",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "MUL",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "discovery_date",
+      "COLUMN_TYPE": "date",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "MUL",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "signal_strength",
+      "COLUMN_TYPE": "decimal(12,4)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "notes",
+      "COLUMN_TYPE": "text",
+      "IS_NULLABLE": "YES",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "MUL",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission",
+      "COLUMN_NAME": "mission_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "TABLE_NAME": "mission",
+      "COLUMN_NAME": "mission_name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "UNI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission",
+      "COLUMN_NAME": "launch_date",
+      "COLUMN_TYPE": "date",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission",
+      "COLUMN_NAME": "agency",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission",
+      "COLUMN_NAME": "status",
+      "COLUMN_TYPE": "varchar(20)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "COLUMN_NAME": "instrument_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "COLUMN_NAME": "mission_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "MUL",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "COLUMN_NAME": "instrument_name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "COLUMN_NAME": "instrument_type",
+      "COLUMN_TYPE": "varchar(80)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "COLUMN_NAME": "mission_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "COLUMN_NAME": "star_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "planet_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "planet_name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "UNI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "star_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "MUL",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "radius_earth",
+      "COLUMN_TYPE": "decimal(10,4)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "mass_earth",
+      "COLUMN_TYPE": "decimal(12,4)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "orbital_period_days",
+      "COLUMN_TYPE": "decimal(14,4)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "orbital_distance_au",
+      "COLUMN_TYPE": "decimal(12,5)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "COLUMN_NAME": "researcher_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "COLUMN_NAME": "first_name",
+      "COLUMN_TYPE": "varchar(60)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "COLUMN_NAME": "last_name",
+      "COLUMN_TYPE": "varchar(60)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "COLUMN_NAME": "email",
+      "COLUMN_TYPE": "varchar(254)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "UNI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "COLUMN_NAME": "role",
+      "COLUMN_TYPE": "varchar(20)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "RESEARCHER",
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "star_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "star_name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "UNI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "spectral_type",
+      "COLUMN_TYPE": "varchar(20)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "distance_ly",
+      "COLUMN_TYPE": "decimal(12,3)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "temperature_k",
+      "COLUMN_TYPE": "decimal(10,2)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "hz_inner_au",
+      "COLUMN_TYPE": "decimal(12,5)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "hz_outer_au",
+      "COLUMN_TYPE": "decimal(12,5)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "planet_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "0",
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "planet_name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "star_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "radius_earth",
+      "COLUMN_TYPE": "decimal(10,4)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "mass_earth",
+      "COLUMN_TYPE": "decimal(12,4)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "orbital_period_days",
+      "COLUMN_TYPE": "decimal(14,4)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "orbital_distance_au",
+      "COLUMN_TYPE": "decimal(12,5)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "star_name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_planet_catalogue",
+      "COLUMN_NAME": "in_habitable_zone",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "0",
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_star_planet_count",
+      "COLUMN_NAME": "star_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "0",
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_star_planet_count",
+      "COLUMN_NAME": "star_name",
+      "COLUMN_TYPE": "varchar(100)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "v_star_planet_count",
+      "COLUMN_NAME": "planet_count",
+      "COLUMN_TYPE": "bigint",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "0",
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation",
+      "COLUMN_NAME": "researcher_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation",
+      "COLUMN_NAME": "discovery_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation",
+      "COLUMN_NAME": "validation_date",
+      "COLUMN_TYPE": "date",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation",
+      "COLUMN_NAME": "confidence_level",
+      "COLUMN_TYPE": "decimal(5,2)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "COLUMN_NAME": "audit_id",
+      "COLUMN_TYPE": "bigint",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "PRI",
+      "EXTRA": "auto_increment"
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "COLUMN_NAME": "researcher_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "COLUMN_NAME": "discovery_id",
+      "COLUMN_TYPE": "int",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "COLUMN_NAME": "action",
+      "COLUMN_TYPE": "varchar(10)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "COLUMN_NAME": "old_confidence",
+      "COLUMN_TYPE": "decimal(5,2)",
+      "IS_NULLABLE": "YES",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "COLUMN_NAME": "new_confidence",
+      "COLUMN_TYPE": "decimal(5,2)",
+      "IS_NULLABLE": "YES",
+      "COLUMN_DEFAULT": null,
+      "COLUMN_KEY": "",
+      "EXTRA": ""
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "COLUMN_NAME": "changed_at",
+      "COLUMN_TYPE": "timestamp(6)",
+      "IS_NULLABLE": "NO",
+      "COLUMN_DEFAULT": "CURRENT_TIMESTAMP(6)",
+      "COLUMN_KEY": "",
+      "EXTRA": "DEFAULT_GENERATED"
+    }
+  ],
+  "keys": [
+    {
+      "TABLE_NAME": "app_account",
+      "COLUMN_NAME": "researcher_id",
+      "CONSTRAINT_NAME": "app_account_ibfk_1",
+      "REFERENCED_TABLE_NAME": "researcher",
+      "REFERENCED_COLUMN_NAME": "researcher_id"
+    },
+    {
+      "TABLE_NAME": "app_account",
+      "COLUMN_NAME": "researcher_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "detection_method",
+      "COLUMN_NAME": "method_name",
+      "CONSTRAINT_NAME": "method_name",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "detection_method",
+      "COLUMN_NAME": "method_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "planet_id",
+      "CONSTRAINT_NAME": "discovery_ibfk_1",
+      "REFERENCED_TABLE_NAME": "planet",
+      "REFERENCED_COLUMN_NAME": "planet_id"
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "mission_id",
+      "CONSTRAINT_NAME": "discovery_ibfk_2",
+      "REFERENCED_TABLE_NAME": "mission",
+      "REFERENCED_COLUMN_NAME": "mission_id"
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "method_id",
+      "CONSTRAINT_NAME": "discovery_ibfk_3",
+      "REFERENCED_TABLE_NAME": "detection_method",
+      "REFERENCED_COLUMN_NAME": "method_id"
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "reported_by",
+      "CONSTRAINT_NAME": "discovery_ibfk_4",
+      "REFERENCED_TABLE_NAME": "researcher",
+      "REFERENCED_COLUMN_NAME": "researcher_id"
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "planet_id",
+      "CONSTRAINT_NAME": "planet_id",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "mission_id",
+      "CONSTRAINT_NAME": "planet_id",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "method_id",
+      "CONSTRAINT_NAME": "planet_id",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "discovery_date",
+      "CONSTRAINT_NAME": "planet_id",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "COLUMN_NAME": "discovery_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "mission",
+      "COLUMN_NAME": "mission_name",
+      "CONSTRAINT_NAME": "mission_name",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "mission",
+      "COLUMN_NAME": "mission_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "COLUMN_NAME": "mission_id",
+      "CONSTRAINT_NAME": "mission_id",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "COLUMN_NAME": "instrument_name",
+      "CONSTRAINT_NAME": "mission_id",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "COLUMN_NAME": "mission_id",
+      "CONSTRAINT_NAME": "mission_instrument_ibfk_1",
+      "REFERENCED_TABLE_NAME": "mission",
+      "REFERENCED_COLUMN_NAME": "mission_id"
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "COLUMN_NAME": "instrument_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "COLUMN_NAME": "mission_id",
+      "CONSTRAINT_NAME": "mission_star_ibfk_1",
+      "REFERENCED_TABLE_NAME": "mission",
+      "REFERENCED_COLUMN_NAME": "mission_id"
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "COLUMN_NAME": "star_id",
+      "CONSTRAINT_NAME": "mission_star_ibfk_2",
+      "REFERENCED_TABLE_NAME": "star",
+      "REFERENCED_COLUMN_NAME": "star_id"
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "COLUMN_NAME": "mission_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "COLUMN_NAME": "star_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "star_id",
+      "CONSTRAINT_NAME": "planet_ibfk_1",
+      "REFERENCED_TABLE_NAME": "star",
+      "REFERENCED_COLUMN_NAME": "star_id"
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "planet_name",
+      "CONSTRAINT_NAME": "planet_name",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "planet",
+      "COLUMN_NAME": "planet_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "COLUMN_NAME": "email",
+      "CONSTRAINT_NAME": "email",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "COLUMN_NAME": "researcher_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "star_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "star",
+      "COLUMN_NAME": "star_name",
+      "CONSTRAINT_NAME": "star_name",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "validation",
+      "COLUMN_NAME": "researcher_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "validation",
+      "COLUMN_NAME": "discovery_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    },
+    {
+      "TABLE_NAME": "validation",
+      "COLUMN_NAME": "researcher_id",
+      "CONSTRAINT_NAME": "validation_ibfk_1",
+      "REFERENCED_TABLE_NAME": "researcher",
+      "REFERENCED_COLUMN_NAME": "researcher_id"
+    },
+    {
+      "TABLE_NAME": "validation",
+      "COLUMN_NAME": "discovery_id",
+      "CONSTRAINT_NAME": "validation_ibfk_2",
+      "REFERENCED_TABLE_NAME": "discovery",
+      "REFERENCED_COLUMN_NAME": "discovery_id"
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "COLUMN_NAME": "audit_id",
+      "CONSTRAINT_NAME": "PRIMARY",
+      "REFERENCED_TABLE_NAME": null,
+      "REFERENCED_COLUMN_NAME": null
+    }
+  ],
+  "checks": [
+    {
+      "TABLE_NAME": "discovery",
+      "CONSTRAINT_NAME": "discovery_chk_1",
+      "CHECK_CLAUSE": "(`signal_strength` > 0)"
+    },
+    {
+      "TABLE_NAME": "mission",
+      "CONSTRAINT_NAME": "mission_chk_1",
+      "CHECK_CLAUSE": "(`status` in (_utf8mb4\\'ACTIVE\\',_utf8mb4\\'COMPLETED\\',_utf8mb4\\'PLANNED\\'))"
+    },
+    {
+      "TABLE_NAME": "planet",
+      "CONSTRAINT_NAME": "planet_chk_1",
+      "CHECK_CLAUSE": "(`radius_earth` > 0)"
+    },
+    {
+      "TABLE_NAME": "planet",
+      "CONSTRAINT_NAME": "planet_chk_2",
+      "CHECK_CLAUSE": "(`mass_earth` > 0)"
+    },
+    {
+      "TABLE_NAME": "planet",
+      "CONSTRAINT_NAME": "planet_chk_3",
+      "CHECK_CLAUSE": "(`orbital_period_days` > 0)"
+    },
+    {
+      "TABLE_NAME": "planet",
+      "CONSTRAINT_NAME": "planet_chk_4",
+      "CHECK_CLAUSE": "(`orbital_distance_au` > 0)"
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "CONSTRAINT_NAME": "researcher_chk_1",
+      "CHECK_CLAUSE": "(`role` in (_utf8mb4\\'ADMIN\\',_utf8mb4\\'RESEARCHER\\'))"
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "CONSTRAINT_NAME": "researcher_chk_2",
+      "CHECK_CLAUSE": "regexp_like(`email`,_utf8mb4\\'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+[.][A-Za-z]{2,}$\\')"
+    },
+    {
+      "TABLE_NAME": "star",
+      "CONSTRAINT_NAME": "star_chk_1",
+      "CHECK_CLAUSE": "(`distance_ly` > 0)"
+    },
+    {
+      "TABLE_NAME": "star",
+      "CONSTRAINT_NAME": "star_chk_2",
+      "CHECK_CLAUSE": "(`temperature_k` > 0)"
+    },
+    {
+      "TABLE_NAME": "star",
+      "CONSTRAINT_NAME": "star_chk_3",
+      "CHECK_CLAUSE": "(`hz_inner_au` > 0)"
+    },
+    {
+      "TABLE_NAME": "star",
+      "CONSTRAINT_NAME": "star_chk_4",
+      "CHECK_CLAUSE": "(`hz_outer_au` > `hz_inner_au`)"
+    },
+    {
+      "TABLE_NAME": "validation",
+      "CONSTRAINT_NAME": "validation_chk_1",
+      "CHECK_CLAUSE": "(`confidence_level` between 0 and 100)"
+    }
+  ],
+  "indexes": [
+    {
+      "TABLE_NAME": "app_account",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "researcher_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "detection_method",
+      "INDEX_NAME": "method_name",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "method_name",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "detection_method",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "method_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "ft_discovery_notes",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "notes",
+      "INDEX_TYPE": "FULLTEXT",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "idx_discovery_date",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "discovery_date",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "method_id",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "method_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "mission_id",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "mission_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "planet_id",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "planet_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "planet_id",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "mission_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 2
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "planet_id",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "method_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 3
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "planet_id",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "discovery_date",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 4
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "discovery_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "INDEX_NAME": "reported_by",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "reported_by",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "mission",
+      "INDEX_NAME": "mission_name",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "mission_name",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "mission",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "mission_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "INDEX_NAME": "mission_id",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "mission_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "INDEX_NAME": "mission_id",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "instrument_name",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 2
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "instrument_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "mission_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "star_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 2
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "INDEX_NAME": "star_id",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "star_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "planet",
+      "INDEX_NAME": "planet_name",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "planet_name",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "planet",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "planet_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "planet",
+      "INDEX_NAME": "star_id",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "star_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "INDEX_NAME": "email",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "email",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "researcher_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "star",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "star_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "star",
+      "INDEX_NAME": "star_name",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "star_name",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "validation",
+      "INDEX_NAME": "idx_validation_discovery",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "discovery_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "validation",
+      "INDEX_NAME": "idx_validation_discovery",
+      "NON_UNIQUE": 1,
+      "COLUMN_NAME": "confidence_level",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 2
+    },
+    {
+      "TABLE_NAME": "validation",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "researcher_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    },
+    {
+      "TABLE_NAME": "validation",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "discovery_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 2
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "INDEX_NAME": "PRIMARY",
+      "NON_UNIQUE": 0,
+      "COLUMN_NAME": "audit_id",
+      "INDEX_TYPE": "BTREE",
+      "SEQ_IN_INDEX": 1
+    }
+  ],
+  "mongo_indexes": [
+    {
+      "v": 2,
+      "key": {
+        "_id": 1
+      },
+      "name": "_id_"
+    },
+    {
+      "v": 2,
+      "key": {
+        "_fts": "text",
+        "_ftsx": 1
+      },
+      "name": "note_text",
+      "weights": {
+        "body": 1,
+        "title": 3
+      },
+      "default_language": "english",
+      "language_override": "language",
+      "textIndexVersion": 3
+    },
+    {
+      "v": 2,
+      "key": {
+        "discovery_id": 1,
+        "created_at": -1
+      },
+      "name": "discovery_id_1_created_at_-1"
+    }
+  ]
+}

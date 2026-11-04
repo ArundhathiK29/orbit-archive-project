@@ -1,0 +1,78 @@
+{
+  "executed_at": "2026-10-31T16:12:47.206Z",
+  "results": [
+    {
+      "name": "Seed: six planets",
+      "result": "PASS"
+    },
+    {
+      "name": "Function: inside zone",
+      "result": "PASS"
+    },
+    {
+      "name": "View: zero-planet star",
+      "result": "PASS"
+    },
+    {
+      "name": "CHECK rejects negative mass",
+      "result": "PASS"
+    },
+    {
+      "name": "CHECK rejects malformed email",
+      "result": "PASS"
+    },
+    {
+      "name": "Foreign key rejects planet without host star",
+      "result": "PASS"
+    },
+    {
+      "name": "Primary key rejects duplicate validation",
+      "result": "PASS"
+    },
+    {
+      "name": "Trigger rejects validation before discovery",
+      "result": "PASS"
+    },
+    {
+      "name": "Trigger rejects unobserved host star",
+      "result": "PASS"
+    },
+    {
+      "name": "Audit trigger records update",
+      "result": "PASS"
+    },
+    {
+      "name": "Rollback restores confidence",
+      "result": "PASS"
+    },
+    {
+      "name": "Failed procedure leaves no planet",
+      "result": "PASS"
+    },
+    {
+      "name": "Procedure commits discovery",
+      "result": "PASS"
+    },
+    {
+      "name": "Clean schema contains exactly the 11 intended tables",
+      "result": "PASS"
+    },
+    {
+      "name": "No researcher contact-number column in clean schema",
+      "result": "PASS"
+    }
+  ],
+  "tables": [
+    "app_account",
+    "detection_method",
+    "discovery",
+    "mission",
+    "mission_instrument",
+    "mission_star",
+    "planet",
+    "researcher",
+    "star",
+    "validation",
+    "validation_audit"
+  ]
+}

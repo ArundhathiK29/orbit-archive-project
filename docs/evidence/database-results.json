@@ -1,0 +1,467 @@
+{
+  "executed_at": "2026-10-31T16:12:48.090Z",
+  "sql": [
+    {
+      "test_name": "Seed: six planets",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Function: inside zone",
+      "result": "PASS"
+    },
+    {
+      "test_name": "View: zero-planet star",
+      "result": "PASS"
+    },
+    {
+      "test_name": "CHECK rejects negative mass",
+      "result": "PASS"
+    },
+    {
+      "test_name": "CHECK rejects malformed email",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Foreign key rejects planet without host star",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Primary key rejects duplicate validation",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Trigger rejects validation before discovery",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Trigger rejects unobserved host star",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Audit trigger records update",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Rollback restores confidence",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Failed procedure leaves no planet",
+      "result": "PASS"
+    },
+    {
+      "test_name": "Procedure commits discovery",
+      "result": "PASS"
+    }
+  ],
+  "guards": [
+    {
+      "name": "Cannot move a discovered planet to another host",
+      "result": "PASS"
+    },
+    {
+      "name": "Cannot move mission launch after discovery",
+      "result": "PASS"
+    },
+    {
+      "name": "Cannot remove an observation used by discoveries",
+      "result": "PASS"
+    },
+    {
+      "name": "Cannot reassign an observation used by discoveries",
+      "result": "PASS"
+    }
+  ],
+  "mongo": [
+    {
+      "name": "Document schema rejects malformed note",
+      "result": "PASS"
+    },
+    {
+      "name": "Text and discovery indexes exist",
+      "result": "PASS"
+    },
+    {
+      "name": "Full-text retrieval returns seeded notes",
+      "result": "PASS"
+    },
+    {
+      "name": "Aggregation returns tag counts",
+      "result": "PASS"
+    }
+  ],
+  "query_outputs": [
+    [
+      {
+        "discovery_id": 1,
+        "planet_name": "Demo Planet 1",
+        "star_name": "Demo Star 1",
+        "mission_name": "Demo Mission 1",
+        "method_name": "Transit",
+        "discovery_date": "2020-01-01"
+      },
+      {
+        "discovery_id": 2,
+        "planet_name": "Demo Planet 2",
+        "star_name": "Demo Star 2",
+        "mission_name": "Demo Mission 2",
+        "method_name": "Radial Velocity",
+        "discovery_date": "2020-01-02"
+      },
+      {
+        "discovery_id": 3,
+        "planet_name": "Demo Planet 3",
+        "star_name": "Demo Star 3",
+        "mission_name": "Demo Mission 3",
+        "method_name": "Direct Imaging",
+        "discovery_date": "2020-01-03"
+      },
+      {
+        "discovery_id": 4,
+        "planet_name": "Demo Planet 4",
+        "star_name": "Demo Star 4",
+        "mission_name": "Demo Mission 4",
+        "method_name": "Microlensing",
+        "discovery_date": "2020-01-04"
+      },
+      {
+        "discovery_id": 5,
+        "planet_name": "Demo Planet 5",
+        "star_name": "Demo Star 5",
+        "mission_name": "Demo Mission 5",
+        "method_name": "Astrometry",
+        "discovery_date": "2020-01-05"
+      },
+      {
+        "discovery_id": 6,
+        "planet_name": "Demo Planet 6",
+        "star_name": "Demo Star 1",
+        "mission_name": "Demo Mission 1",
+        "method_name": "Transit",
+        "discovery_date": "2020-01-06"
+      }
+    ],
+    [
+      {
+        "mission_name": "Demo Mission 1",
+        "discoveries": 2
+      }
+    ],
+    [
+      {
+        "planet_name": "Demo Planet 4",
+        "mass_earth": 4
+      },
+      {
+        "planet_name": "Demo Planet 5",
+        "mass_earth": 5
+      },
+      {
+        "planet_name": "Demo Planet 6",
+        "mass_earth": 6
+      }
+    ],
+    [
+      {
+        "star_name": "Demo Star 1",
+        "planet_count": 2
+      },
+      {
+        "star_name": "Demo Star 2",
+        "planet_count": 1
+      },
+      {
+        "star_name": "Demo Star 3",
+        "planet_count": 1
+      },
+      {
+        "star_name": "Demo Star 4",
+        "planet_count": 1
+      },
+      {
+        "star_name": "Demo Star 5",
+        "planet_count": 1
+      },
+      {
+        "star_name": "Demo Star 6",
+        "planet_count": 0
+      }
+    ],
+    [
+      {
+        "discovery_id": 5
+      },
+      {
+        "discovery_id": 6
+      }
+    ],
+    [
+      {
+        "discovery_id": 1,
+        "reviewers": 2,
+        "avg_confidence": 92.5
+      },
+      {
+        "discovery_id": 2,
+        "reviewers": 1,
+        "avg_confidence": 80
+      },
+      {
+        "discovery_id": 3,
+        "reviewers": 1,
+        "avg_confidence": 85
+      },
+      {
+        "discovery_id": 4,
+        "reviewers": 1,
+        "avg_confidence": 92
+      },
+      {
+        "discovery_id": 5,
+        "reviewers": 0,
+        "avg_confidence": null
+      },
+      {
+        "discovery_id": 6,
+        "reviewers": 0,
+        "avg_confidence": null
+      }
+    ],
+    [
+      {
+        "discovery_id": 1,
+        "notes": "Synthetic transit signal for teaching example 1"
+      },
+      {
+        "discovery_id": 2,
+        "notes": "Synthetic transit signal for teaching example 2"
+      },
+      {
+        "discovery_id": 3,
+        "notes": "Synthetic transit signal for teaching example 3"
+      },
+      {
+        "discovery_id": 4,
+        "notes": "Synthetic transit signal for teaching example 4"
+      },
+      {
+        "discovery_id": 5,
+        "notes": "Synthetic transit signal for teaching example 5"
+      },
+      {
+        "discovery_id": 6,
+        "notes": "Synthetic transit signal for teaching example 6"
+      }
+    ],
+    [
+      {
+        "planet_name": "Demo Planet 1",
+        "star_name": "Demo Star 1"
+      },
+      {
+        "planet_name": "Demo Planet 3",
+        "star_name": "Demo Star 3"
+      },
+      {
+        "planet_name": "Demo Planet 5",
+        "star_name": "Demo Star 5"
+      }
+    ],
+    [
+      {
+        "researcher_id": 7,
+        "first_name": "Updated",
+        "last_name": "Demo",
+        "email": "temporary@example.org",
+        "role": "RESEARCHER"
+      }
+    ]
+  ],
+  "mongo_tags": [
+    {
+      "_id": "candidate",
+      "count": 3
+    },
+    {
+      "_id": "cross-mission",
+      "count": 3
+    },
+    {
+      "_id": "follow-up",
+      "count": 3
+    },
+    {
+      "_id": "transit",
+      "count": 3
+    }
+  ],
+  "demo_outputs": [
+    [
+      {
+        "star_id": 1,
+        "star_name": "Demo Star 1",
+        "planet_count": 2
+      },
+      {
+        "star_id": 2,
+        "star_name": "Demo Star 2",
+        "planet_count": 1
+      },
+      {
+        "star_id": 3,
+        "star_name": "Demo Star 3",
+        "planet_count": 1
+      },
+      {
+        "star_id": 4,
+        "star_name": "Demo Star 4",
+        "planet_count": 1
+      },
+      {
+        "star_id": 5,
+        "star_name": "Demo Star 5",
+        "planet_count": 1
+      },
+      {
+        "star_id": 6,
+        "star_name": "Demo Star 6",
+        "planet_count": 0
+      }
+    ],
+    [
+      {
+        "inside_zone": 1
+      }
+    ],
+    [
+      [
+        {
+          "planet_id": 1,
+          "planet_name": "Demo Planet 1",
+          "star_id": 1,
+          "radius_earth": 1.1,
+          "mass_earth": 1,
+          "orbital_period_days": 365,
+          "orbital_distance_au": 1.1,
+          "star_name": "Demo Star 1",
+          "in_habitable_zone": 1
+        },
+        {
+          "planet_id": 3,
+          "planet_name": "Demo Planet 3",
+          "star_id": 3,
+          "radius_earth": 1.3,
+          "mass_earth": 3,
+          "orbital_period_days": 365,
+          "orbital_distance_au": 1.1,
+          "star_name": "Demo Star 3",
+          "in_habitable_zone": 1
+        },
+        {
+          "planet_id": 5,
+          "planet_name": "Demo Planet 5",
+          "star_id": 5,
+          "radius_earth": 1.5,
+          "mass_earth": 5,
+          "orbital_period_days": 365,
+          "orbital_distance_au": 1.1,
+          "star_name": "Demo Star 5",
+          "in_habitable_zone": 1
+        }
+      ],
+      {
+        "fieldCount": 0,
+        "affectedRows": 0,
+        "insertId": 0,
+        "info": "",
+        "serverStatus": 34,
+        "warningStatus": 0,
+        "changedRows": 0
+      }
+    ],
+    [
+      {
+        "researcher_id": 2,
+        "discovery_id": 1,
+        "validation_date": "2020-02-02",
+        "confidence_level": 90
+      },
+      {
+        "researcher_id": 1,
+        "discovery_id": 1,
+        "validation_date": "2020-02-01",
+        "confidence_level": 99
+      }
+    ],
+    [
+      {
+        "action": "UPDATE",
+        "old_confidence": 95,
+        "new_confidence": 99
+      }
+    ],
+    [
+      {
+        "researcher_id": 2,
+        "discovery_id": 1,
+        "validation_date": "2020-02-02",
+        "confidence_level": 90
+      },
+      {
+        "researcher_id": 1,
+        "discovery_id": 1,
+        "validation_date": "2020-02-01",
+        "confidence_level": 95
+      }
+    ]
+  ],
+  "versions": {
+    "mysql_version": "26.7.0"
+  },
+  "tables": [
+    {
+      "TABLE_NAME": "app_account",
+      "TABLE_ROWS": 5
+    },
+    {
+      "TABLE_NAME": "detection_method",
+      "TABLE_ROWS": 5
+    },
+    {
+      "TABLE_NAME": "discovery",
+      "TABLE_ROWS": 6
+    },
+    {
+      "TABLE_NAME": "mission",
+      "TABLE_ROWS": 5
+    },
+    {
+      "TABLE_NAME": "mission_instrument",
+      "TABLE_ROWS": 5
+    },
+    {
+      "TABLE_NAME": "mission_star",
+      "TABLE_ROWS": 6
+    },
+    {
+      "TABLE_NAME": "planet",
+      "TABLE_ROWS": 6
+    },
+    {
+      "TABLE_NAME": "researcher",
+      "TABLE_ROWS": 5
+    },
+    {
+      "TABLE_NAME": "star",
+      "TABLE_ROWS": 6
+    },
+    {
+      "TABLE_NAME": "validation",
+      "TABLE_ROWS": 5
+    },
+    {
+      "TABLE_NAME": "validation_audit",
+      "TABLE_ROWS": 8
+    }
+  ]
+}

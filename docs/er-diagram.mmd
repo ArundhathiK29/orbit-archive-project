@@ -1,0 +1,46 @@
+erDiagram
+    STAR ||--o{ PLANET : hosts
+    MISSION ||--o{ MISSION_INSTRUMENT : carries
+    MISSION ||--o{ MISSION_STAR : observes
+    STAR ||--o{ MISSION_STAR : observed_by
+    PLANET ||--o{ DISCOVERY : has
+    MISSION ||--o{ DISCOVERY : reports
+    DETECTION_METHOD ||--o{ DISCOVERY : detects
+    RESEARCHER ||--o{ DISCOVERY : reports
+    RESEARCHER ||--o| APP_ACCOUNT : signs_in_with
+    RESEARCHER ||--o{ VALIDATION : reviews
+    DISCOVERY ||--o{ VALIDATION : receives
+    STAR {
+        int star_id PK
+        string star_name UK
+        decimal hz_inner_au
+        decimal hz_outer_au
+    }
+    PLANET {
+        int planet_id PK
+        int star_id FK
+        string planet_name UK
+    }
+    DISCOVERY {
+        int discovery_id PK
+        int planet_id FK
+        int mission_id FK
+        int method_id FK
+        int reported_by FK
+        date discovery_date
+    }
+    VALIDATION {
+        int researcher_id PK,FK
+        int discovery_id PK,FK
+        date validation_date
+        decimal confidence_level
+    }
+    VALIDATION_AUDIT {
+        bigint audit_id PK
+        int researcher_id
+        int discovery_id
+        string action
+        decimal old_confidence
+        decimal new_confidence
+        timestamp changed_at
+    }
